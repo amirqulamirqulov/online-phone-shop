@@ -1,0 +1,15 @@
+<div>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{form.as_p}}
+
+        <input type="submit" value="registration">
+    </form>
+</div>
+
+<div>
+
+    <p style="color: red;">Please, correct the errors</p>
+    {{form.error_messages}}
+</div>

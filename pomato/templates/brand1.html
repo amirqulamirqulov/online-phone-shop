@@ -1,0 +1,20 @@
+{% extends 'brand.html' %}
+
+
+
+{% block content %}
+    {% load static %}
+    {% for item in phones %}
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 margin">
+            <div class="brand_box">
+                <img src="media/{{item.image}}" alt="img" class="image"/>
+                 <span><a href="brand/{{item.name}}" class="phone_name">{{item.name}}</a></span>
+                <i><img src={% static 'images/star.png' %}/></i>
+                <i><img src={% static 'images/star.png' %}/></i>
+                <i><img src={% static 'images/star.png' %}/></i>
+                <i><img src={% static 'images/star.png' %}/></i>
+            </div>
+        </div>
+    {% endfor %} 
+    
+{% endblock %}

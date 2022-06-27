@@ -1,0 +1,6 @@
+<a href={% url 'author_add' %}>Add</a>
+<br/>
+<br/>
+{% for item in author %}
+{{item.name}} | {{item.email}} | <a href={% url 'author_change' item.id %}>Change</a> |  <a href={% url 'author_delete' item.id %}>Delete</a> <br/> <hr/>
+{%endfor%}

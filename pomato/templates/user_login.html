@@ -1,0 +1,19 @@
+
+
+
+<div>
+    <form action="" method="post" >
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="log in">
+    </form>
+
+    <div>
+        
+        <p style="color: red;">The username or password incorrect. Please try again</p>
+        {{form.error_messages}}
+       
+    </div>
+    
+</div>
+

@@ -1,0 +1,57 @@
+.box {
+    margin: 0, auto;
+    padding: 20px;
+    margin-left: 20px;
+}
+
+.button {
+    padding: 0px 45px;
+    background-color: green;
+    font-size: 20px;
+    display: inline-block;
+    border-radius: 10px;
+    border: solid 2px green;
+    color: #fff;
+}
+.button:hover {
+    color: #fff;
+    background-color: rgb(rgb(4, 114, 240), green, blue);
+}
+
+.box1 table
+{
+ margin-top: 20px;
+}
+
+.box1 th {
+    font-size: 23px;
+    color: black;
+    padding: 0, 30px;
+    padding-right: 40px;
+}
+
+.box1 td {
+    font-size: 20px ;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+}
+
+.change  a {
+    border: solid 2px #010292;
+    margin-right: 20px ;
+    padding: 5px;
+    background-color: #0102f3;
+    color: #fff;
+    border-radius: 8px;
+    margin-left: 20px;
+}
+
+
+.delete a{
+    border: solid 2px #a70000;
+    margin-right: 20px ;
+    background-color: #f10000;
+    padding: 5px;
+    color: #fff;
+    border-radius: 8px;
+}

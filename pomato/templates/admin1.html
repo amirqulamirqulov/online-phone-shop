@@ -1,0 +1,35 @@
+{% extends 'admin.html' %} 
+
+{% block content %}
+
+    <div class="box">
+
+        
+
+
+        <a class="button" href={% url 'phone_add' %}>Add Brand</a>
+
+        <form action="" method="get" style="margin-top: 40px;">
+            <input type="text" name="name" placeholder="brand name" value = "{{request.COOKIES.name}}">
+            <input type="submit" value="search">
+        </form>
+        
+        <div class="box1">
+            <table>
+                <th>Brand name</th>
+                <th>Image</th>
+                {%for item in brands %}
+                <tr>
+                    <td>{{item.name}}</td>
+                    <td>{{item.image}}</td>
+                    <td class="change"><a href={% url 'phone_change' item.id %}>change</a></td>
+                    <td class="delete"><a href={% url 'phone_delete' item.id %}>Delete</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <br> <br>
+        
+     
+    </div>
+{% endblock %}

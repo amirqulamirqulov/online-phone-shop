@@ -1,0 +1,30 @@
+{% extends 'phones.html' %}
+
+{% block brand_title %} 
+
+    {{ request.resolver_match.url_name }}
+
+{% endblock %}
+
+{% block content %}
+    
+    {% load static %}
+    {% for item in phones %}
+        {% if item.brand.name == request.resolver_match.url_name  %}
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 margin">
+                <div class="brand_box">
+                    <img src="{{item.images.url}}" alt="img" class="image"/> <br>
+                    <b>{{item.brand.name}}  {{item.name}}</b>
+                    <p><b>Ram: </b>{{item.ram}} gb</p>
+                    <p><b>Memory: </b>{{item.memory}} gb</p>
+                    <p><b>Price: </b>{{item.price}} $</p>
+                    <i><img src={% static 'images/star.png' %}/></i>
+                    <i><img src={% static 'images/star.png' %}/></i>
+                    <i><img src={% static 'images/star.png' %}/></i>
+                    <i><img src={% static 'images/star.png' %}/></i>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %} 
+
+{% endblock %}

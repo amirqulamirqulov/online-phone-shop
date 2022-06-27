@@ -1,0 +1,70 @@
+{% extends 'admin.html' %} 
+
+{% block content2 %}
+<div class="box">
+    <a class="button" href={% url 'add_phones'  %}>Add Phone</a>
+
+    <form action="" method="get" style="margin-top: 50px;">
+        <input type="text" name="brand" id="" placeholder="brand name" value = "{{request.COOKIES.brand}}" style="
+            border: 2px solid red;
+            margin-right: 20px;
+            border-radius: 8px;
+             ">
+        <input type="text" name="name" id="" placeholder="phone name" value = "{{request.COOKIES.name}}" style="
+        border: 2px solid red;
+        margin-right: 20px;
+        border-radius: 8px;
+        ">
+        <input type="number" name="ram" id="" placeholder="ram" value = "{{request.COOKIES.ram}}" style="
+        border: 2px solid red; 
+        margin-right: 20px;
+        border-radius: 8px;
+        ">
+        <input type="number" name="memory" id="" placeholder="memory" value = "{{request.COOKIES.memory}}" style="
+        border: 2px solid red; 
+        margin-right: 20px;
+        border-radius: 8px;
+        ">
+        <input type="number" name="price" id="" placeholder="price" value = "{{request.COOKIES.price}}" style="
+        border: 2px solid red; 
+        margin-right: 20px;
+        border-radius: 8px;
+        ">
+        <input type="submit" value="Search" style="
+        border: 2px solid red; 
+        margin-right: 20px;
+        border-radius: 8px;
+        ">
+    </form>
+            
+    <div class="box1">
+        <table>
+            <tr>
+                <th>Brand name</th>
+                <th>Phone name</th>
+                <th>Ram</th>
+                <th>Memory</th>
+                <th>Price</th>
+                <th>Image</th>
+            </tr>
+            {% for phone in phones %}
+                <tr>
+                    <td>{{phone.brand.name}}</td>
+                    <td>{{phone.name}}</td>
+                    <td>{{phone.ram}}</td>
+                    <td>{{phone.memory}}</td>
+                    <td>{{phone.price}}</td>
+                    <td>{{phone.images}}</td>
+                    <td class="change"><a href={% url 'update_phones' phone.id %}>change</a></td>
+                    <td class="delete"><a href={% url 'delete_phones' phone.id %}>Delete</a></td>
+                </tr>
+            {% endfor %} 
+            
+        </table>
+    </div>
+</div>
+{% endblock %}
+
+
+
+

@@ -1,0 +1,14 @@
+.phone_name {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.image {
+    margin-bottom: 12px;
+}
+
+.phone_name:hover {
+color: red;
+font-size: 35px;
+animation: 2;
+}

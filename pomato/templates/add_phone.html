@@ -1,0 +1,27 @@
+{%if author %}
+
+
+<form action="" method="post">
+
+    {% csrf_token %}
+
+    <input type="hidden" name="pk"  value = {{author.id}}>  <br> <br>
+    <input type="text" name="name" id="" placeholder="name" value={{author.name}}> <br> <br>
+    <input type="email" name="email" id="" placeholder="email" value = {{author.email}}> <br> <br>
+
+    <input type="submit" value="change">
+</form>
+
+{% else %}
+
+<form action="" method="post">
+
+    {% csrf_token %}
+
+    
+    <input type="text" name="name" id="" placeholder="name"> <br> <br>
+    <input type="email" name="email" id="" placeholder="email"> <br> <br>
+
+    <input type="submit" value="create">
+</form>
+{% endif %}
